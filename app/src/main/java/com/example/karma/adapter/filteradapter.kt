@@ -11,7 +11,6 @@ import com.example.karma.response.Category
 import java.util.*
 
 internal class filteradapter(
-    private val context:Context,
     private val mItems: ArrayList<Category>,
     private val mListener: ItemListener
 ) : RecyclerView.Adapter<filteradapter.ViewHolder>() {

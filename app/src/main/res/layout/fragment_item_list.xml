@@ -107,6 +107,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_filter"
                 android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -124,6 +127,8 @@
 
     </RelativeLayout>
 
-    <include layout="@layout/layout_bottom_sheet" />
+    <include
+        android:id="@+id/bottom_sheet"
+        layout="@layout/layout_bottom_sheet" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

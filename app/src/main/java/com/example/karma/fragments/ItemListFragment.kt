@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.karma.R
 import com.example.karma.activities.MainActivity
 import com.example.karma.adapter.CPListAdapter
@@ -40,7 +39,6 @@ import kotlinx.android.synthetic.main.activity_product_list.title_productList
 import kotlinx.android.synthetic.main.activity_product_list.txt_noData
 import kotlinx.android.synthetic.main.fragment_item_list.*
 import kotlinx.android.synthetic.main.fragment_item_list.view.*
-import kotlinx.android.synthetic.main.layout_bottom_sheet.*
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -139,13 +137,13 @@ class ItemListFragment : Fragment(), AddToCartWishListListner, RemoveWishListCli
                     filterist = response.body()?.result?.filters?.category
 
 
-                    recyclerView?.layoutManager =
+                    (activity as MainActivity).recyclerView?.layoutManager =
                         LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                    recyclerView?.setHasFixedSize(true)
+                    (activity as MainActivity).recyclerView?.setHasFixedSize(true)
                     if (filterist.isNullOrEmpty()) {
                     } else {
-                        fadapter = filteradapter(context!!, filterist!!, this@ItemListFragment)
-                        recyclerView?.adapter = fadapter
+                        fadapter = filteradapter(filterist!!, this@ItemListFragment)
+                        (activity as MainActivity).recyclerView?.adapter = fadapter
                     }
 
                     val mLayoutManager =

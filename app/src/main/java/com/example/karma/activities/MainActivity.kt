@@ -77,7 +77,7 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
         setSupportActionBar(toolbar)
 
         supportActionBar!!.setDisplayShowTitleEnabled(false)
-
+        recyclerView = findViewById(R.id.recyclerView)
         txt_vendorName.setTextColor(Color.parseColor(PreferenceManager.getFontColor(context)))
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, 0, 0
@@ -454,7 +454,7 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
 
                             btn_openBottonSheet.visibility = View.VISIBLE
                             vendorList = response.body()!!.result.vendorList
-                            recyclerView = findViewById(R.id.recyclerView)
+
                             recyclerView?.layoutManager =
                                 LinearLayoutManager(
                                     this@MainActivity,
