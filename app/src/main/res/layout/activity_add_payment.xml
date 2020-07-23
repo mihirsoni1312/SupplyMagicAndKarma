@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".activities.AddPaymentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+
+            <ImageView
+                android:id="@+id/btn_back_payment"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/title_productList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:fontFamily="@font/bold"
+                android:text="Add Payment Methods"
+                android:textColor="@color/toolbarTitle"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/myprofileunderline" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_weight="6"
+            android:fontFamily="@font/bold"
+            android:text="Payment Policy"
+            android:textColor="@color/toolbarTitle"
+            android:textSize="@dimen/_16ssp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_weight="6"
+            android:fontFamily="@font/regular"
+            android:text="Your Payment will only be charged once goods are received at your location and invoice is signed"
+            android:textColor="@color/toolbarTitle"
+            android:textSize="@dimen/_13ssp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddBank"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Add Bank Account"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp"
+            app:cornerRadius="@dimen/_8sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_adjust_24"
+                android:tint="@color/red" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/regular"
+                android:text="Securly pay invoices without processig fees"
+                android:textColor="@color/toolbarTitle"
+                android:textSize="@dimen/_13ssp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbAddCard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Add Credit card"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp"
+            app:cornerRadius="@dimen/_8sdp" />
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_adjust_24"
+                android:tint="@color/red" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/regular"
+                android:text="Credit card carry a 3 % processing fees"
+                android:textColor="@color/toolbarTitle"
+                android:textSize="@dimen/_13ssp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

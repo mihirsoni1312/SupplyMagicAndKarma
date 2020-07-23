@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_productTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/txt_sdesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/regular"
+                    android:text="Crispy pasteres filled with potatoes and pies"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSdis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text=""
+            android:textSize="@dimen/_12sdp" />
+
+        <LinearLayout
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_28sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_weight="3"
+            android:gravity="end"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/txt_oldprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:fontFamily="@font/bold"
+                android:gravity="top"
+                android:text="$3.95"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:textColor="@color/shadow"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:fontFamily="@font/bold"
+                android:text="$3.95"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <!--<LinearLayout
+                android:id="@+id/card_dropDown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="3.2"
+                android:gravity="center">
+
+                <com.google.android.material.card.MaterialCardView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardCornerRadius="180dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_6sdp"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_6sdp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_weight="2.1"
+                            android:text="Medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp" />
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.9"
+                            android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>-->
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/rounded_corner_white_background"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txt_minus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <TextView
+                        android:id="@+id/txt_dispayDigit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp" />
+                    <TextView
+                        android:id="@+id/txt_add"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp" />
+
+
+                </LinearLayout>
+                &lt;!&ndash;<com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardCornerRadius="180dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/txt_add"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15ssp" />
+
+                        <TextView
+                            android:id="@+id/txt_dispayDigit"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15ssp" />
+
+                        <TextView
+                            android:id="@+id/txt_minus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_16ssp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+            </LinearLayout>-->
+            <LinearLayout
+                android:id="@+id/card_dropDown"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corner_white_background">
+
+                <TextView
+                    android:id="@+id/quantity_product_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:text="Mengo 1KG"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="0.7"
+                android:background="@drawable/rounded_corner_white_background">
+
+                <TextView
+                    android:id="@+id/txt_minus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/txt_dispayDigit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+                <TextView
+                    android:id="@+id/txt_add"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/txt_btn_orderNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="Add"
+                android:layout_margin="@dimen/_5sdp"
+                app:cornerRadius="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <!--<LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="3.8"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/txt_btn_orderNow"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="Add"
+                    app:cornerRadius="@dimen/_10sdp"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_10sdp" />
+
+
+            </LinearLayout>-->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvUnavalable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_28sdp"
+            android:text="Currently Unavailable"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ll_task"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/viewColor" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/bold"
+        android:layout_below="@id/viewline"
+        android:text="Item Details"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_title"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+    </LinearLayout>
+</RelativeLayout>

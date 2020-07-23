@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_productRow_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/img_product_search"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_gravity="center"
+                android:layout_weight="2.5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/samosu" />
+
+
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/ll_content"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_marginLeft="@dimen/_10sdp"-->
+            <!--                android:layout_weight="6"-->
+            <!--                android:orientation="vertical">-->
+
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/txt_search_title"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                    android:fontFamily="@font/regular"-->
+            <!--                    android:text="Crisp pastries filled with potatoes and peas"-->
+            <!--                    android:textSize="@dimen/_11ssp" />-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="@dimen/_3sdp"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/txt_new_price_search"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:fontFamily="@font/medium"-->
+            <!--                        android:text="$3.95"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_10ssp" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/txt_old_price_search"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginLeft="@dimen/_8sdp"-->
+            <!--                        android:fontFamily="@font/medium"-->
+            <!--                        android:text="$3.95"-->
+            <!--                        android:textColor="@color/grey"-->
+            <!--                        android:textSize="@dimen/_10ssp" />-->
+
+
+            <!--                </LinearLayout>-->
+
+            <!--            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_weight="6"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_itemview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:lines="1"
+                        android:text="Samosa"
+                        android:textColor="#D72B39"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtdescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Crisp pastries filled with potatoes and peas"
+                    android:textSize="@dimen/_8ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_newPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="$3.95"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtdiscountPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="$3.95"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:id="@+id/txt_discountpersent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:fontFamily="@font/medium"
+                        android:singleLine="true"
+                        android:text="save $3.00(5%)"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_10ssp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/unavailable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/medium"
+                    android:text="Currently Unavailable"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.4">
+
+                <ImageView
+                    android:id="@+id/relatedItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_addButton"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="-40dp"
+                    android:src="@drawable/icn_switch"
+                    android:translationZ="@dimen/_10sdp" />
+
+                <ImageView
+                    android:id="@+id/ll_addButton"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/addbrn" />
+
+                <ImageView
+                    android:id="@+id/vagnonvagIcon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/nonveg" />
+
+                <ImageView
+                    android:id="@+id/imgvagnonvagIcon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/nonveg" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/viewColor" />
+
+    </LinearLayout>
+</RelativeLayout>

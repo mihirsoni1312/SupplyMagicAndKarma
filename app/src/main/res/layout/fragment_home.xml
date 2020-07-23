@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_65sdp"
+                android:background="@color/colorPrimary"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/ll_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_searchLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/txtboarder"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_10sdp"
+                        android:weightSum="10">
+
+                        <ImageView
+                            android:id="@+id/icon_search"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_search_black_24dp" />
+
+
+                        <TextView
+                            android:id="@+id/txt_searchHere"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_weight="9"
+                            android:fontFamily="@font/regular"
+                            android:text="Search Products"
+                            android:textSize="@dimen/_10ssp" />
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/sliderFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_search"
+                android:orientation="vertical">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_155sdp" />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:padding="10dip"
+                    app:centered="true"
+                    app:fillColor="@color/red"
+                    app:pageColor="#B6B6B6"
+                    app:radius="@dimen/_2sdp"
+                    app:snap="false" />
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_catList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/sliderFrame"
+                android:layout_marginTop="-3dp" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

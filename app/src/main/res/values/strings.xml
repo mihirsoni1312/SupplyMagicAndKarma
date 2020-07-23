@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Supply Magic</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="terms_and_condition"><u>Terms and Condition</u></string>
+    <string name="paymentKey">KSpre$HXmEwKCXohBUeP9X</string>
+    <string name="button_allow">Allow</string>
+    <string name="button_deny">Deny</string>
+    <string name="permission_msg">Please allow permission.</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name="options">
+        <item>Camera</item>
+        <item>Gallery</item>
+    </string-array>
+
+    <string name="cancel">Cancel</string>
+</resources>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    tools:context=".fragments.HelpFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+
+            <ImageView
+                android:id="@+id/btn_back_help"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/title_productList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:fontFamily="@font/bold"
+                android:text="Help"
+                android:textColor="@color/toolbarTitle"
+                android:textSize="@dimen/_15ssp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/myprofileunderline" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvGlassOfWater"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#FFD6DC"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="GLASS OF WATER"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvSendInvoice"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#D0F0D2"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="SEND INVOICE"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvTalkToUs"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#B0E3FD"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="TALK TO \nUS!"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvSendMessage"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#FFE2BE"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/tvSendMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="SEND MESSAGE!"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_20ssp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

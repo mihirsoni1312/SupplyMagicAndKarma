@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.PlaceorderComplete">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/llheader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/title_productList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="Thanks for Your order!"
+                    android:textColor="@color/toolbarTitle"
+                    android:textSize="@dimen/_23ssp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/llheader"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <ImageView
+                    android:id="@+id/imgeview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/illustration" />
+
+                <LinearLayout
+                    android:id="@+id/llmain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgeview"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvdeliveryon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Delivering on"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Wednesday,April 8"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="7AM-6PM"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_txttotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Your Total:"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15sdp" />
+
+                        <TextView
+                            android:id="@+id/tv_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/tv_txttotal"
+                            android:gravity="center"
+                            android:text="$335"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15sdp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:id="@+id/ll_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/idStill"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:gravity="center"
+                            android:text="Still need to make changes?"
+                            android:textColor="@color/shadow"
+                            android:textSize="@dimen/_15sdp" />
+
+                        <TextView
+                            android:id="@+id/YouCanEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="You can edit this cart util"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:id="@+id/tv_deliverydate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:text="Wednesday,April 8,12:00 AM"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15sdp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_close"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_35sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_35sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:text="SHOP NOW"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14ssp"
+                        app:cornerRadius="@dimen/_15sdp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FFB034</color>
+    <color name="shadow">#777777</color>
+    <color name="black">#000000</color>
+    <color name="navigationColor">#000000</color>
+    <color name="lineColor">#2F2972</color>
+    <color name="toolbarTitle">#1D1853</color>
+    <color name="myprofileunderline">#DDEAF4</color>
+    <color name="red">#FB6570</color>
+    <color name="navigationLine">#1D1D1D</color>
+    <color name="editColor">#2119FA</color>
+    <color name="deleteColor">#D32A43</color>
+    <color name="underlinecolorrv">#DCEAF3</color>
+    <color name="grey">#C0C5CA</color>
+    <color name="colorGray">#F3F3F3</color>
+    <color name="viewColor">#DFEBF5</color>
+    <color name="colorlightBlue">#6398cd</color>
+    <color name="colorDarkBlue">#000e25</color>
+    <color name="colorBlue">#244f7c</color>
+
+</resources>

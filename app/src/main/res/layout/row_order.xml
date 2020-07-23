@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlmain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mar 30, 2020"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_inv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_date"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Inv #123456"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_weight="50"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/tv_prise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="$72.24"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/img_select"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/placedicon" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@+id/llmain"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/viewColor" />
+
+</RelativeLayout>

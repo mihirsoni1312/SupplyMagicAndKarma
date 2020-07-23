@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".activities.SplashActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:src="@drawable/imgsplash_3x" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/imglogo_3x" />
+
+
+    <ProgressBar
+        android:id="@+id/progressbarSupplyMagic"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txtxx"
+        android:progressTint="@color/red"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:indeterminateTint="@color/red"
+        android:progress="1" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/regular"
+        android:gravity="center"
+        android:text="A quick and simplified your \n shopping experience with SupplyMagic"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"/>
+
+</LinearLayout>

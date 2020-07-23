@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">207.244.244.64</domain>
+        <domain includeSubdomains="true">dar5hant-001-site3.btempurl.com</domain>
+    </domain-config>
+</network-security-config>

@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.NoActionBar"
+    tools:context=".activities.ReviewCheckoutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+
+        <ImageView
+            android:id="@+id/btn_back_cart"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="2"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_productList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="8"
+            android:fontFamily="@font/bold"
+            android:text="Review Checkout"
+            android:textColor="@color/toolbarTitle"
+            android:textSize="@dimen/_15ssp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/myprofileunderline" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="vertical"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:context=".activities.ReviewCheckoutActivity">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@android:color/white"
+                android:outlineSpotShadowColor="@color/shadow"
+                android:padding="@dimen/_8sdp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_10sdp">
+
+                <RelativeLayout
+                    android:id="@+id/dropdown_pickup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@android:color/white"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_2sdp">
+
+                    <Spinner
+                        android:layout_centerVertical="true"
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toStartOf="@+id/dArrow"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:tooltipText="@string/app_name" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/setSpinner"-->
+                    <!--                        android:text="Select"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="@dimen/_25sdp"-->
+                    <!--                        android:layout_centerVertical="true"-->
+                    <!--                        android:layout_toLeftOf="@+id/dArrow"-->
+                    <!--                        android:fontFamily="@font/bold"-->
+                    <!--                        android:gravity="center_vertical"-->
+                    <!--                        android:paddingStart="@dimen/_8sdp"-->
+                    <!--                        android:textColor="@color/black"-->
+                    <!--                        android:textSize="@dimen/_10sdp" />-->
+
+                    <ImageView
+                        android:id="@+id/dArrow"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_baseline_expand_more_24" />
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/pickUpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/txt_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/bold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Choose Pick Up Location"
+                        android:textColor="@color/toolbarTitle"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/delivery_location"
+                        android:translationZ="@dimen/_10sdp" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@android:color/white"
+                    android:outlineSpotShadowColor="@color/shadow"
+                    android:padding="@dimen/_8sdp"
+                    app:cardBackgroundColor="#edf2f7"
+                    app:cardCornerRadius="@dimen/_8sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/dropdown_pickup_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_6sdp">
+
+                        <TextView
+                            android:id="@+id/pick_up_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:id="@+id/tvchangeaddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:text="Change"
+                            android:textSize="@dimen/_15sdp"
+                            android:visibility="gone" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:layout_width="@dimen/_25sdp"-->
+                        <!--                            android:layout_height="@dimen/_25sdp"-->
+                        <!--                            android:layout_alignParentRight="true"-->
+                        <!--                            android:layout_centerVertical="true"-->
+                        <!--                            android:src="@drawable/ic_baseline_expand_more_24"-->
+                        <!--                            android:visibility="gone" />-->
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/tv_timesloat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/bold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Choose Pick Up Time Slot"
+                        android:textColor="@color/toolbarTitle"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <ImageView
+                        android:id="@+id/img_timeslot"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/deliver_icon"
+                        android:translationZ="@dimen/_10sdp" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@android:color/white"
+                    android:outlineSpotShadowColor="@color/shadow"
+                    android:padding="@dimen/_8sdp"
+                    app:cardBackgroundColor="#edf2f7"
+                    app:cardCornerRadius="@dimen/_8sdp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/dropdown_pickup_time_slot"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="end"
+                        android:padding="@dimen/_2sdp">
+
+                        <Spinner
+                            android:id="@+id/spinner_pickup_time_slot"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_minus1sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:background="@android:color/transparent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_baseline_expand_more_24" />
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/DeliveryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/bold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Choose Delivery Time Slot"
+                        android:textColor="@color/toolbarTitle"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/deliver_icon"
+                        android:translationZ="@dimen/_10sdp" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@android:color/white"
+                    android:outlineSpotShadowColor="@color/shadow"
+                    android:padding="@dimen/_8sdp"
+                    app:cardBackgroundColor="#edf2f7"
+                    app:cardCornerRadius="@dimen/_8sdp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/dropdown_delivery_time_slot"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_2sdp">
+
+                        <Spinner
+                            android:id="@+id/spinner_time_slot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:background="@android:color/transparent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:src="@drawable/ic_baseline_expand_more_24" />
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:background="@android:color/white"
+                        android:fontFamily="@font/bold"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Choose Delivery Location"
+                        android:textColor="@color/toolbarTitle"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/delivery_location"
+                        android:translationZ="@dimen/_10sdp" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@android:color/white"
+                    android:outlineSpotShadowColor="@color/shadow"
+                    android:padding="@dimen/_8sdp"
+                    app:cardBackgroundColor="#edf2f7"
+                    app:cardCornerRadius="@dimen/_8sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/dropdown_delivery_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="end"
+                        android:padding="@dimen/_6sdp">
+
+                        <TextView
+                            android:id="@+id/spinner_pick_up"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:id="@+id/changeAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text="CHANGE" />
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="@android:color/white"
+                android:fontFamily="@font/bold"
+                android:padding="@dimen/_5sdp"
+                android:text="Your Total"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Cart Total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/rowTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_5sdp"
+                    android:text="$17.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="@color/myprofileunderline" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Tax"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_5sdp"
+                    android:text="$0.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Delivery Fee"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDeliveryCharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_5sdp"
+                    android:text="$0.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Promo Discount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvPromocode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_5sdp"
+                    android:text="$0.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="@color/myprofileunderline" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/_3sdp"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:text="Tip"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/tip_type_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/tvNotToday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/bold"
+                            android:gravity="center"
+                            android:padding="@dimen/_3sdp"
+                            android:text="Not today"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/tvFifteen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/white"
+                            android:fontFamily="@font/bold"
+                            android:padding="@dimen/_3sdp"
+                            android:text="15%"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/tvTwenty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/white"
+                            android:fontFamily="@font/bold"
+                            android:padding="@dimen/_3sdp"
+                            android:text="20%"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/tvTwentyFive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:background="@android:color/white"
+                            android:fontFamily="@font/bold"
+                            android:padding="@dimen/_3sdp"
+                            android:text="25%"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/Custom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/white"
+                            android:fontFamily="@font/bold"
+                            android:padding="@dimen/_3sdp"
+                            android:text="Own"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tvTipVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_17sdp"
+                    android:background="@android:color/white"
+                    android:fontFamily="@font/bold"
+                    android:text="$0.00"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/customTip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:background="@drawable/edittext_border"
+                android:inputType="number"
+                android:maxLength="5"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="@color/myprofileunderline" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/copunCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="0.6"
+                    android:maxLength="10"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Promo Code"
+                    android:inputType="text"
+                    android:singleLine="true" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/applyCoupan"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="0.4"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="Apply"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:cornerRadius="@dimen/_8sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="@color/myprofileunderline" />
+
+            <TextView
+                android:id="@+id/tvFinalTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@android:color/white"
+                android:fontFamily="@font/bold"
+                android:gravity="end"
+                android:padding="@dimen/_5sdp"
+                android:text="$0.00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_35sdp"
+
+                android:layout_marginRight="@dimen/_35sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Place Order"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14ssp"
+                app:cornerRadius="@dimen/_8sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

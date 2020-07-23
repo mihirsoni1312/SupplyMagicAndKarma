@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CartFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+
+            <ImageView
+                android:id="@+id/btn_back_cart"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/title_productList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:fontFamily="@font/bold"
+                android:text="Your Cart"
+                android:textColor="@color/toolbarTitle"
+                android:textSize="@dimen/_15ssp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/header"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/myprofileunderline" />
+
+        <!--        <ScrollView-->
+        <!--            android:id="@+id/scrollView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:visibility="visible">-->
+
+        <LinearLayout
+            android:id="@+id/laout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomLayout"
+            android:layout_below="@+id/view"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cartList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:nestedScrollingEnabled="false" />
+
+
+        </LinearLayout>
+        <!--        </ScrollView>-->
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/titleTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:gravity="right"
+                    android:text="$15.50"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_17ssp" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/comment_edt_txt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@drawable/editext_background"
+                android:gravity="top"
+                android:hint="Enter any additional about your order. Eg. 'No Cheese' &amp; maximum 150 characters"
+                android:lines="5"
+                android:maxLength="150"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@color/myprofileunderline" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_checkout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:backgroundTint="@color/red"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Checkout"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                app:cornerRadius="@dimen/_8sdp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/empty_cart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:translationZ="@dimen/_10sdp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_emptycart"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:src="@drawable/imgsplash_3x" />
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_emptycart"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/bold"
+                android:text="Your cart is empty!"
+                android:textColor="@color/toolbarTitle"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt1"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"
+                android:fontFamily="@font/bold"
+                android:text="Add items to it now."
+                android:textSize="@dimen/_10sdp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_shop_now"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_below="@+id/txt2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:backgroundTint="#0040FF"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="shop now"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10sdp"
+                app:cornerRadius="@dimen/_8sdp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+
+        <ImageView
+            android:id="@+id/btn_back_cart"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="2"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title_productList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="8"
+            android:fontFamily="@font/bold"
+            android:text="Cart"
+            android:textColor="@color/toolbarTitle"
+            android:textSize="@dimen/_15ssp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/myprofileunderline" />-->
+
+    <!--<LinearLayout
+        android:id="@+id/laout_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cartList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Total"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:gravity="right"
+                android:text="$15.50"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp" />
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/comment_edt_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:gravity="top"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:hint="Enter any additional about your order. Eg. 'No Cheese'"
+            android:background="@drawable/editext_background"
+            android:lines="5"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@color/myprofileunderline" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Checkout"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp"
+            app:cornerRadius="@dimen/_8sdp" />
+    </LinearLayout>-->
+
+
+    <!--        </LinearLayout>-->
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+</FrameLayout>

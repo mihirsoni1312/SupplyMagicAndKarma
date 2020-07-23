@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".activities.EditAddressActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/title_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="6"
+                android:fontFamily="@font/bold"
+                android:text="Update Address"
+                android:textColor="@color/toolbarTitle"
+                android:textSize="@dimen/_16ssp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/myprofileunderline" />
+
+
+        <ImageView
+            android:id="@+id/img_addaddress_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp" />
+
+        <TextView
+            android:id="@+id/txt_add_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="@font/semibold"
+            android:text="Update Address"
+            android:textSize="@dimen/_15ssp" />
+
+        <com.savvyapps.togglebuttonlayout.ToggleButtonLayout
+            android:id="@+id/toggleButtonLayoutText_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_32sdp"
+            android:layout_marginBottom="16dp"
+            app:allowDeselection="false"
+            app:cardBackgroundColor="#EEEEEF"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:customLayout="@layout/view_toggle_button"
+            app:dividerColor="@android:color/darker_gray"
+            app:menu="@menu/toggles_text"
+            app:toggleMode="even" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:outlineSpotShadowColor="@color/shadow"
+            android:padding="@dimen/_10sdp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_10sdp">
+
+            <EditText
+                android:id="@+id/edt_address_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@null"
+                android:drawableLeft="@drawable/icn_address_3x"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/medium"
+                android:hint="Address"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/_5sdp"
+                android:text="504 Sprue Ave. West Depter"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
+                android:textSize="@dimen/_12ssp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:outlineSpotShadowColor="@color/shadow"
+            android:padding="@dimen/_8sdp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_10sdp">
+
+            <EditText
+                android:id="@+id/edt_zip_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@null"
+                android:drawableLeft="@drawable/icn_zip_3x"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/medium"
+                android:hint="382330"
+                android:inputType="number"
+                android:maxEms="6"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:padding="@dimen/_5sdp"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
+                android:textSize="@dimen/_12ssp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_edit_address"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Update Address"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14ssp"
+            app:cornerRadius="@dimen/_8sdp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
