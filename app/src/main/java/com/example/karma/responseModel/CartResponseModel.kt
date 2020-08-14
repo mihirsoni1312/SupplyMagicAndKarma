@@ -8,8 +8,11 @@ data class CartResponseModel(
     @SerializedName("cartId")
     var cartId: String,
 
-  @SerializedName("orderId")
+    @SerializedName("orderId")
     var orderId: String,
+
+    @SerializedName("totalTax")
+    var totalTax: String,
 
     @SerializedName("productInfo")
     var productInfoList: ArrayList<ProductInfoCartModel>

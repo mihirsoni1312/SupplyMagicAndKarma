@@ -52,6 +52,7 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
     var promoCode: String = ""
     var delivery: String = ""
     var counterFor = 0
+    var totaltax: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,8 +65,10 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
         var total = intent?.let { it.getStringExtra("total") }
         cartId = intent?.let { it.getStringExtra("cartId") }.toString()
         orderComments = intent?.let { it.getStringExtra("orderdis") }.toString()
+        totaltax = intent?.let { it.getStringExtra("totaltax") }.toString()
 
         rowTotal.text = "$ $total"
+        tvTax.text = totaltax
 
         finalTotal()
 
@@ -146,18 +149,24 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
                     if (pickuparray[position] == "Select") {
                         pickUpLayout.visibility = View.GONE
                         DeliveryLayout.visibility = View.GONE
+                    } else if (pickuparray[position] == "Delivery") {
+                        DeliveryLayout.visibility = View.VISIBLE
+                        pickUpLayout.visibility = View.GONE
+                        img_timeslot.setImageResource(R.drawable.deliver_icon)
+                        tv_timesloat.text = "Choose Delivery Time Slot"
+                        txt_location.text = "Choose Delivery Location"
                     } else if (pickuparray[position] == "Pick Up") {
                         DeliveryLayout.visibility = View.GONE
                         pickUpLayout.visibility = View.VISIBLE
                         img_timeslot.setImageResource(R.drawable.deliver_icon)
-                        tv_timesloat.text="Choose Pick Up Time Slot"
-                        txt_location.text="Choose Pick Up Location"
+                        tv_timesloat.text = "Choose Pick Up Time Slot"
+                        txt_location.text = "Choose Pick Up Location"
                     } else if (pickuparray[position] == "Dine In") {
                         DeliveryLayout.visibility = View.GONE
                         pickUpLayout.visibility = View.VISIBLE
                         img_timeslot.setImageResource(R.drawable.imgpsh_danig)
-                        tv_timesloat.text="Choose Dine In Time Slot"
-                        txt_location.text="Choose Dine In Location"
+                        tv_timesloat.text = "Choose Dine In Time Slot"
+                        txt_location.text = "Choose Dine In Location"
                     } else {
                         DeliveryLayout.visibility = View.VISIBLE
                         pickUpLayout.visibility = View.GONE

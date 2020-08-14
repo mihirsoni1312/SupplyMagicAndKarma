@@ -60,7 +60,7 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
 
     var backCounter: Int = 0
     var behavior: BottomSheetBehavior<*>? = null
-    public var recyclerView: RecyclerView? = null
+    var recyclerView: RecyclerView? = null
     private var mAdapter: MediaItemAdapter? = null
     private var coordinatorLayout: CoordinatorLayout? = null
 
@@ -77,7 +77,6 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
         setSupportActionBar(toolbar)
 
         supportActionBar!!.setDisplayShowTitleEnabled(false)
-        recyclerView = findViewById(R.id.recyclerView)
         txt_vendorName.setTextColor(Color.parseColor(PreferenceManager.getFontColor(context)))
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, 0, 0
@@ -334,6 +333,7 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
             backCounter = 0
             bottom_navigation.selectedItemId = R.id.bottom_menu
             loadFragment(HomeFragment())
+            behavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
         } else {
             if (backCounter == 0) {
                 Toast.makeText(this, "Press again to exit", Toast.LENGTH_LONG).show()
@@ -341,6 +341,7 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
                 Handler().postDelayed(Runnable { backCounter = 0 }, 1000)
             } else if (backCounter == 1) {
                 finishAffinity()
+
             }
         }
     }
@@ -454,7 +455,7 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
 
                             btn_openBottonSheet.visibility = View.VISIBLE
                             vendorList = response.body()!!.result.vendorList
-
+                            recyclerView = findViewById(R.id.recyclerView)
                             recyclerView?.layoutManager =
                                 LinearLayoutManager(
                                     this@MainActivity,

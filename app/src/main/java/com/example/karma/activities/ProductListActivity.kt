@@ -194,7 +194,16 @@ class ProductListActivity : BaseActivity(), ProductListAdapter.RelatedProduct,
         behavior!!.state = BottomSheetBehavior.STATE_EXPANDED
     }
 
-    override fun onItemClick(name: String?, _id: String, newPrice: String, isFavPro: Boolean,qty:String,op: String,iAv:Boolean) {
+    override fun onItemClick(
+        pos: Int,
+        name: String?,
+        _id: String,
+        newPrice: String,
+        isFavPro: Boolean,
+        qty: String,
+        op: String,
+        iAv: Boolean
+    ) {
         behavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 

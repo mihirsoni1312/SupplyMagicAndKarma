@@ -44,6 +44,7 @@ class CartFragment : Fragment(), DeleteCartClickListner, CartListAdapter.TotalCh
     private var cartAdapter: CartListAdapter? = null
     var cartId: String = ""
     var orderId: String = ""
+    var totalTax: String = ""
 
     var call: Call<CartListResponse>? = null
     lateinit var progressDialog: Dialog
@@ -110,6 +111,7 @@ class CartFragment : Fragment(), DeleteCartClickListner, CartListAdapter.TotalCh
                     val mainIntent = Intent(context, ReviewCheckoutActivity::class.java)
                     mainIntent.putExtra("total", tvTotal.text.toString().replace("$", ""))
                     mainIntent.putExtra("cartId", cartId)
+                    mainIntent.putExtra("totaltax", totalTax)
                     mainIntent.putExtra("orderdis", comment_edt_txt.text.toString())
                     mainIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                     startActivity(mainIntent)
@@ -134,7 +136,7 @@ class CartFragment : Fragment(), DeleteCartClickListner, CartListAdapter.TotalCh
         getcartinfoveryfy()
     }
 
-    private fun getcartinfoveryfy(){
+    private fun getcartinfoveryfy() {
         progressDialog = context?.let { CustomProgressbar().show(it) }!!
         val myJason = JSONObject()
         myJason.put("appId", AppIDConfig.SupplyMagicAppId)
@@ -165,6 +167,7 @@ class CartFragment : Fragment(), DeleteCartClickListner, CartListAdapter.TotalCh
                             orderId = response.body()?.result?.orderId!!
                             btn_checkout.text = "Update Order"
                         }
+                        totalTax = response.body()?.result?.totalTax!!
                         cartList = (response.body()?.result?.productInfoList)
                         cartId = response.body()?.result?.cartId!!
                         if (cartList?.isEmpty()!!) {

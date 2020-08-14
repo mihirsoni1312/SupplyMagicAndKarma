@@ -124,7 +124,7 @@ interface ApiInterface {
     @POST("CCD")
     fun cardDelete(
         @Body body: JsonObject
-    ): Call<CommonSimpleResponse>
+    ): Call<Deletecartresponse>
 
     @POST("updateDefaultPaymentType")
     fun updateDefaultPaymentType(

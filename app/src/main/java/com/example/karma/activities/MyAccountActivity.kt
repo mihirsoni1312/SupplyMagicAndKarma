@@ -109,8 +109,8 @@ class MyAccountActivity : BaseActivity() {
             openCamera(5)
         }
 
-        txt_save.setOnClickListener {
-            if (!selectedFile.equals(""))
+        crd_save.setOnClickListener {
+//            if (!selectedFile.equals(""))
                 updateUserByIdApiCall()
         }
     }

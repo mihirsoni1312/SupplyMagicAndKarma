@@ -63,6 +63,7 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
     var pId: String = ""
     private var mAdapter: CPListAdapter? = null
     private var cpList: ArrayList<CPModel> = ArrayList()
+    var positionforCpList: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -155,6 +156,7 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
                 if (txt_dispayDigit.text.toString() == "0") {
                     toast("Please add at least one quantity")
                 } else {
+
                     addToCart()
                 }
             }
@@ -183,6 +185,11 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
                 )
             )
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadData()
     }
 
     private fun slider(images: ArrayList<String>) {
@@ -325,13 +332,13 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
                         "UTF-8",
                         null
                     )
-//                    if (cpList.size != 0) {
-                    txt_dispayDigit.text = response.body()!!.result.qty
-                    slider(imageModelArrayList!!)
-                    /*} else {
+                    if (cpList.size > 0) {
+                        txt_dispayDigit.text = response.body()!!.result.cP[0].qty
+                        slider(imageModelArrayList!!)
+                    } else {
                         txt_dispayDigit.text = response.body()!!.result.qty
                         slider(imageModelArrayList!!)
-                    }*/
+                    }
                 } else {
 
                     Toast.makeText(this@ProductDetailActivity, "Fail", Toast.LENGTH_SHORT).show()
@@ -353,7 +360,7 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
 
     private fun addToCart() {
         progressDialog = CustomProgressbar().show(this@ProductDetailActivity)
-
+        mAdapter?.setQuenty(txt_dispayDigit.text.toString(), positionforCpList)
         /*"appId": "", (Required)
         "vendorId": "", (Required)
         "userId": "", (Required)
@@ -382,6 +389,7 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
                     progressDialog!!.dismiss()
                     if (response.body()!!.responseCode == 200) {
                         toast(response.body()!!.message)
+//                        loadData()
                     } else {
                         Toast.makeText(this@ProductDetailActivity, "Fail", Toast.LENGTH_SHORT)
                             .show()
@@ -457,46 +465,6 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
         })
     }
 
-    override fun onItemClick(
-        name: String?,
-        _id: String,
-        newPrice: String,
-        isFavPro: Boolean,
-        qty: String,
-        op: String,
-        iAv: Boolean
-    ) {
-        quantity_product_txt.text = name
-        Id = _id
-        txt_price.text = "$currence$newPrice"
-        productId = _id
-        behavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
-        isFav = isFavPro
-        txt_dispayDigit.text = qty
-        if (isFavPro) {
-            fav.setImageDrawable(resources.getDrawable(R.drawable.favoriteicon))
-        } else {
-            fav.setImageDrawable(resources.getDrawable(R.drawable.unfavoriteicon))
-        }
-        txt_oldprice.text = "${currence}" + "${op}"
-
-        iav = iAv
-        if (iav) {
-            txt_btn_orderNow.setBackgroundColor(
-                Color.parseColor(
-                    PreferenceManager.getBackgroundColor(
-                        this
-                    )
-                )
-            )
-            tvUnavalable.visibility = View.GONE
-        } else {
-            txt_btn_orderNow.setBackgroundColor(
-                resources.getColor(R.color.grey)
-            )
-            tvUnavalable.visibility = View.VISIBLE
-        }
-    }
 
     private fun deleteFromWishList() {
 
@@ -535,6 +503,49 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
                 ).show()
             }
         })
+    }
+
+    override fun onItemClick(
+        pos: Int,
+        name: String?,
+        _id: String,
+        newPrice: String,
+        isFavPro: Boolean,
+        qty: String,
+        opp: String,
+        iAv: Boolean
+    ) {
+        quantity_product_txt.text = name
+        Id = _id
+        positionforCpList = pos
+        txt_price.text = "$currence$newPrice"
+        productId = _id
+        behavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
+        isFav = isFavPro
+        txt_dispayDigit.text = qty
+        if (isFavPro) {
+            fav.setImageDrawable(resources.getDrawable(R.drawable.favoriteicon))
+        } else {
+            fav.setImageDrawable(resources.getDrawable(R.drawable.unfavoriteicon))
+        }
+        txt_oldprice.text = "${currence}" + "${opp}"
+
+        iav = iAv
+        if (iav) {
+            txt_btn_orderNow.setBackgroundColor(
+                Color.parseColor(
+                    PreferenceManager.getBackgroundColor(
+                        this
+                    )
+                )
+            )
+            tvUnavalable.visibility = View.GONE
+        } else {
+            txt_btn_orderNow.setBackgroundColor(
+                resources.getColor(R.color.grey)
+            )
+            tvUnavalable.visibility = View.VISIBLE
+        }
     }
 
 }

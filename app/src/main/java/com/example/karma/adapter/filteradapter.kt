@@ -24,7 +24,7 @@ internal class filteradapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.txt_titled.text = mItems[position].cName
+        holder.txt_titled.text = "${mItems[position].cName}"
 //        holder.txt_titled.setOnClickListener {
 //            mListener.onItemClick(mItems[position].id)
 //        }

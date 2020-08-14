@@ -32,6 +32,11 @@ internal class CPListAdapter(
         holder.txt_titled.text = mItems[position].name
     }
 
+    fun setQuenty(qty: String, position: Int) {
+        mItems.get(position).qty = qty
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return mItems.size
     }
@@ -49,6 +54,7 @@ internal class CPListAdapter(
 
         override fun onClick(v: View) {
             mListener?.onItemClick(
+                position,
                 mItems[position].name,
                 mItems[position]._id,
                 mItems[position].pI.n,
@@ -63,13 +69,14 @@ internal class CPListAdapter(
 
     internal interface ItemListenerCP {
         fun onItemClick(
+            pos: Int,
             name: String?,
             _id: String,
             newPrice: String,
             isFavPro: Boolean,
-            qty: String ,
-            opp:String,
+            qty: String,
+            opp: String,
             iAv: Boolean
-            )
+        )
     }
 }

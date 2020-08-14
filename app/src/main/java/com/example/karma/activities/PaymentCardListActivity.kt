@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.karma.R
 import com.example.karma.adapter.PaymentListAdapter
 import com.example.karma.interfaces.CardDeleteClickListner
-import com.example.karma.response.CommonSimpleResponse
+import com.example.karma.response.Deletecartresponse
 import com.example.karma.response.PCK
 import com.example.karma.response.PaymentResponse
 import com.example.karma.response.VendorListResponse
@@ -179,7 +179,23 @@ class PaymentCardListActivity : AppCompatActivity(), CardDeleteClickListner,
         myJason.put("VRS", PreferenceManager.getVendorId(this))
         myJason.put("SCP", cardId)
         myJason.put("TYP", paymenttype)
-        myJason.put("PCK", bankdetails)
+        var jArray = JSONArray()
+        var Jbobject: JSONObject = JSONObject()
+        Jbobject.put("bId", bankdetails.bld)
+        Jbobject.put("cId", bankdetails.cld)
+//        var valueList =
+//            utils.fromJson(bankdetails, object : TypeToken<List<PCK>>() {}.type)
+
+//        var value: List<PCK> = valueList as List<PCK>
+//        for (i in value) {
+//            var j: JSONObject = JSONObject()
+//            j.put("bId", i.bld)
+//            j.put("cId", i.cld)
+
+            jArray.put(Jbobject)
+
+//        }
+        myJason.put("PCK", jArray)
         val obj: JSONObject = myJason
         val jsonParser = JsonParser()
         val gsonObject =
@@ -187,23 +203,23 @@ class PaymentCardListActivity : AppCompatActivity(), CardDeleteClickListner,
 
         val apiService = ApiClientForSGP.client.create(ApiInterface::class.java)
         val call = apiService.cardDelete(gsonObject)
-        call.enqueue(object : Callback<CommonSimpleResponse> {
+        call.enqueue(object : Callback<Deletecartresponse> {
             @SuppressLint("ShowToast")
             override fun onResponse(
-                call: Call<CommonSimpleResponse>,
-                response: Response<CommonSimpleResponse>
+                call: Call<Deletecartresponse>,
+                response: Response<Deletecartresponse>
             ) {
                 progressDialog?.dismiss()
                 if (response.isSuccessful) {
 
-                    toast(response.body()!!.message)
+                    toast(response.body()!!.result)
                     vendorList()
                 } else {
-                    toast(response.body()!!.message)
+                    toast(response.body()!!.result)
                 }
             }
 
-            override fun onFailure(call: Call<CommonSimpleResponse>, t: Throwable) {
+            override fun onFailure(call: Call<Deletecartresponse>, t: Throwable) {
                 progressDialog?.dismiss()
 
                 Toast.makeText(

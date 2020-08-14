@@ -136,6 +136,11 @@ class ItemListFragment : Fragment(), AddToCartWishListListner, RemoveWishListCli
                     txt_searchHere.text = "${response.body()?.result?.totalProducts}" + " Result"
                     filterist = response.body()?.result?.filters?.category
 
+//                    (activity as MainActivity).recyclerView?.adapter = activity?.let {
+//                        filteradapter(
+//                            filterist!!, this@ItemListFragment
+//                        )
+//                    }
 
                     (activity as MainActivity).recyclerView?.layoutManager =
                         LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -294,6 +299,7 @@ class ItemListFragment : Fragment(), AddToCartWishListListner, RemoveWishListCli
     }
 
     override fun onItemClick(
+        pos: Int,
         name: String?,
         _id: String,
         newPrice: String,
