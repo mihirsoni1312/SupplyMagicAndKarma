@@ -318,7 +318,7 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
 
                     txt_productTitle.text = response.body()!!.result.name
                     txt_sdesc.text = response.body()!!.result.sdesc
-                    // txt_price.text = response.body()!!.result.pI.n
+                     txt_price.text = response.body()!!.result.pI.n
                     productId = response.body()!!.result._id
 
                     webview.settings.javaScriptEnabled = true
