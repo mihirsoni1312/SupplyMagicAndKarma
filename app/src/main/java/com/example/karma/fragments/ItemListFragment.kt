@@ -72,10 +72,7 @@ class ItemListFragment : Fragment(), AddToCartWishListListner, RemoveWishListCli
             startActivity(mainIntent)
         }
 
-        view.icon_filter.setOnClickListener {
-            rl_filter.visibility = View.VISIBLE
-            (activity as MainActivity).behavior!!.state = BottomSheetBehavior.STATE_EXPANDED
-        }
+
 
 
         return view
@@ -133,9 +130,13 @@ class ItemListFragment : Fragment(), AddToCartWishListListner, RemoveWishListCli
                             )
                         }
                     }
-                    txt_searchHere.text = "${response.body()?.result?.totalProducts}" + " Result"
-                    filterist = response.body()?.result?.filters?.category
+                    if(!response.body()?.result?.totalProducts.isNullOrBlank()) {
+                        txt_searchHere.text =
+                            "${response.body()?.result?.totalProducts}" + " Result"
+                        filterist = response.body()?.result?.filters?.category
+                    }else{
 
+                    }
 //                    (activity as MainActivity).recyclerView?.adapter = activity?.let {
 //                        filteradapter(
 //                            filterist!!, this@ItemListFragment
@@ -149,6 +150,10 @@ class ItemListFragment : Fragment(), AddToCartWishListListner, RemoveWishListCli
                     } else {
                         fadapter = filteradapter(filterist!!, this@ItemListFragment)
                         (activity as MainActivity).recyclerView?.adapter = fadapter
+                        icon_filter.setOnClickListener {
+                            rl_filter.visibility = View.VISIBLE
+                            (activity as MainActivity).behavior!!.state = BottomSheetBehavior.STATE_EXPANDED
+                        }
                     }
 
                     val mLayoutManager =

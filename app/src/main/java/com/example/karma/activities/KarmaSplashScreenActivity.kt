@@ -74,10 +74,10 @@ class KarmaSplashScreenActivity : BaseActivity() {
             ) {
                 if (response.body()!!.responseCode == 200) {
 
-                    PreferenceManager.setId(
-                        this@KarmaSplashScreenActivity,
-                        response.body()!!.result._id
-                    )
+                    /*   PreferenceManager.setId(
+                           this@KarmaSplashScreenActivity,
+                           response.body()!!.result._id
+                       )*/
                     PreferenceManager.setAppName(
                         this@KarmaSplashScreenActivity,
                         response.body()!!.result.appName
@@ -106,10 +106,11 @@ class KarmaSplashScreenActivity : BaseActivity() {
                         this@KarmaSplashScreenActivity,
                         response.body()!!.result.slideMenuIconColor
                     )
-/*
-                    "slideMenuBackGroundColor": "#000000",
-                    "slideMenuFontColor": "#ffffff",
-                    "slideMenuIconColor": "#454545",*/
+                    PreferenceManager.setIsRestaurentApp(
+                        this@KarmaSplashScreenActivity,
+                        response.body()!!.result.isRestaurentApp
+                    )
+
                     PreferenceManager.setButtonFontColor(
                         this@KarmaSplashScreenActivity,
                         response.body()!!.result.buttonFontColor
@@ -122,114 +123,29 @@ class KarmaSplashScreenActivity : BaseActivity() {
                         this@KarmaSplashScreenActivity,
                         response.body()!!.result.registrationScreenLogo
                     )
-                    thread {
-
-                        val loginPath: File =
-                            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-
-                        PRDownloader.download(
-                            response.body()!!.result.loginScreeLogo,
-                            loginPath.absolutePath,
-                            "loginbgKarma.jpg"
-                        )
-                            .build()
-                            .setOnStartOrResumeListener {
-
-                            }
-                            .setOnPauseListener {
-
-                            }
-                            .setOnCancelListener {
-
-                            }
-                            .setOnProgressListener {
-
-                            }
-                            .start(object : OnDownloadListener {
-                                override fun onDownloadComplete() {
-
-                                    PreferenceManager.setLoginAbusulatPath(
-                                        this@KarmaSplashScreenActivity,
-                                        loginPath.absolutePath
-                                    )
-
-                                    if (PreferenceManager.getisLogin(this@KarmaSplashScreenActivity)) {
-                                        val mainIntent =
-                                            Intent(
-                                                this@KarmaSplashScreenActivity,
-                                                MainActivity::class.java
-                                            )
-                                        startActivity(mainIntent)
-                                        finish()
-                                    } else {
-                                        val mainIntent =
-                                            Intent(
-                                                this@KarmaSplashScreenActivity,
-                                                LoginActivity::class.java
-                                            )
-                                        startActivity(mainIntent)
-                                        finish()
-                                    }
-                                }
-
-                                override fun onError(error: com.downloader.Error?) {
-                                    Toast.makeText(
-                                        this@KarmaSplashScreenActivity,
-                                        error.toString(),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-
-                            })
-
-                        /**
-                         * Login Image Download....
-                         */
-
-                        val registerPath: File =
-                            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-
-                        PRDownloader.download(
-                            response.body()!!.result.registrationScreenLogo,
-                            registerPath.absolutePath,
-                            "registerbgKarma.jpg"
-                        )
-                            .build()
-                            .setOnStartOrResumeListener {
-
-                            }
-                            .setOnPauseListener {
-
-                            }
-                            .setOnCancelListener {
-
-                            }
-                            .setOnProgressListener {
+                    PreferenceManager.setTempVendorId(
+                        this@KarmaSplashScreenActivity,
+                        response.body()!!.result.defaultVendorId
+                    )
 
 
-                            }
-                            .start(object : OnDownloadListener {
-                                override fun onDownloadComplete() {
-
-                                    PreferenceManager.setRegisterAbusulatPath(
-                                        this@KarmaSplashScreenActivity,
-                                        registerPath.absolutePath
-                                    )
-
-                                }
-
-                                override fun onError(error: com.downloader.Error?) {
-                                    Toast.makeText(
-                                        this@KarmaSplashScreenActivity,
-                                        error.toString(),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-
-                            })
-
+                    if (PreferenceManager.getisLogin(this@KarmaSplashScreenActivity)) {
+                        val mainIntent =
+                            Intent(
+                                this@KarmaSplashScreenActivity,
+                                MainActivity::class.java
+                            )
+                        startActivity(mainIntent)
+                        finish()
+                    } else {
+                        val mainIntent =
+                            Intent(
+                                this@KarmaSplashScreenActivity,
+                                LoginActivity::class.java
+                            )
+                        startActivity(mainIntent)
+                        finish()
                     }
-
 
                 } else {
 
@@ -240,11 +156,7 @@ class KarmaSplashScreenActivity : BaseActivity() {
             }
 
             override fun onFailure(call: Call<ConfigAppIdResponse>, t: Throwable) {
-                Toast.makeText(
-                    this@KarmaSplashScreenActivity,
-                    "" + t.message,
-                    Toast.LENGTH_SHORT
-                )
+
             }
         })
     }

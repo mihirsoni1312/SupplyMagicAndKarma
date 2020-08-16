@@ -39,6 +39,9 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
 
     var pickuparray = ArrayList<String>()
     lateinit var deliverySlotList: ArrayList<Result>
+    lateinit var pickupSlotList: ArrayList<Result>
+    lateinit var DeleverySlotList: ArrayList<Result>
+    lateinit var dyinSlotList: ArrayList<Result>
     var pickuparray_location = ArrayList<String>()
     var pickuparray_time_slot = ArrayList<String>()
     var progressDialog: Dialog? = null
@@ -158,10 +161,18 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
                     } else if (pickuparray[position] == "Pick Up") {
                         DeliveryLayout.visibility = View.GONE
                         pickUpLayout.visibility = View.VISIBLE
+                        spinner_pickup_time_slot.adapter = SpinnerAdapter(
+                            this@ReviewCheckoutActivity,
+                            pickupSlotList
+                        )
                         img_timeslot.setImageResource(R.drawable.deliver_icon)
                         tv_timesloat.text = "Choose Pick Up Time Slot"
                         txt_location.text = "Choose Pick Up Location"
                     } else if (pickuparray[position] == "Dine In") {
+                        spinner_pickup_time_slot.adapter = SpinnerAdapter(
+                            this@ReviewCheckoutActivity,
+                           dyinSlotList
+                        )
                         DeliveryLayout.visibility = View.GONE
                         pickUpLayout.visibility = View.VISIBLE
                         img_timeslot.setImageResource(R.drawable.imgpsh_danig)
@@ -179,7 +190,7 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
                     } else {
                         orderType = 3
                     }
-                    if (!::deliverySlotList.isInitialized) {
+                    if (!::deliverySlotList.isInitialized || deliverySlotList.size == 0) {
                         DeliverySlotApiCall()
                     }
 //                    if (setSpinner.text.equals("Delivery") || setSpinner.text.equals("Pick Up")) {
@@ -429,7 +440,7 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
         val myJason = JSONObject()
         myJason.put("VRS", PreferenceManager.getVendorId(this))
         myJason.put("ZIP", PreferenceManager.getzipCode(this))
-        myJason.put("API", "1")
+        myJason.put("API", AppIDConfig.SupplyMagicAppId)
         val obj: JSONObject = myJason
         val jsonParser = JsonParser()
         val gsonObject =
@@ -451,11 +462,16 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
                     if (response.body()!!.result != null) {
 
                         deliverySlotList = response.body()?.result!! as ArrayList<Result>
-                        deliverySlotList =
-                            deliverySlotList.filterNot { it.type.equals("2") } as ArrayList<Result>
+                        pickupSlotList =
+                            deliverySlotList.filter { it.type.equals("2") } as ArrayList<Result>
+                        DeleverySlotList =
+                            deliverySlotList.filter { it.type.equals("1") } as ArrayList<Result>
+                        dyinSlotList =
+                            deliverySlotList.filter { it.type.equals("3") } as ArrayList<Result>
+
                         spinner_pickup_time_slot.adapter = SpinnerAdapter(
                             this@ReviewCheckoutActivity,
-                            deliverySlotList
+                            pickupSlotList
                         )
 
 
@@ -463,7 +479,7 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
                         timelist = timelist.filterNot { it.type.equals("1") } as ArrayList<Result>
                         spinner_time_slot.adapter = SpinnerAdapter(
                             this@ReviewCheckoutActivity,
-                            timelist
+                            DeleverySlotList
                         )
 
                     }
@@ -515,17 +531,24 @@ class ReviewCheckoutActivity : AppCompatActivity(), View.OnClickListener {
         var cartAllowTime: String
         var deliveryCharge: String
         if (orderType == 1) {
-            deliveryDate = deliverySlotList[timeselectedD].orderDate.toString()
-            deliveryFrom = deliverySlotList[timeselectedD].startTime.toString()
-            deliveryTo = deliverySlotList[timeselectedD].endTime.toString()
-            cartAllowTime = deliverySlotList[timeselectedD].checkOutReplaceEndTime.toString()
-            deliveryCharge = deliverySlotList[timeselectedD].deliveryFee.toString()
-        } else {
-            deliveryDate = timelist[timeselectedP].orderDate.toString()
-            deliveryFrom = timelist[timeselectedP].startTime.toString()
-            deliveryTo = timelist[timeselectedP].endTime.toString()
-            cartAllowTime = timelist[timeselectedP].checkOutReplaceEndTime.toString()
-            deliveryCharge = timelist[timeselectedP].deliveryFee.toString()
+            deliveryDate = DeleverySlotList[timeselectedD].orderDate.toString()
+            deliveryFrom = DeleverySlotList[timeselectedD].startTime.toString()
+            deliveryTo = DeleverySlotList[timeselectedD].endTime.toString()
+            cartAllowTime = DeleverySlotList[timeselectedD].checkOutReplaceEndTime.toString()
+            deliveryCharge = DeleverySlotList[timeselectedD].deliveryFee.toString()
+        } else if(orderType == 2) {
+            deliveryDate = pickupSlotList[timeselectedP].orderDate.toString()
+            deliveryFrom = pickupSlotList[timeselectedP].startTime.toString()
+            deliveryTo = pickupSlotList[timeselectedP].endTime.toString()
+            cartAllowTime = pickupSlotList[timeselectedP].checkOutReplaceEndTime.toString()
+            deliveryCharge = pickupSlotList[timeselectedP].deliveryFee.toString()
+
+        }else{
+            deliveryDate = dyinSlotList[timeselectedP].orderDate.toString()
+            deliveryFrom = dyinSlotList[timeselectedP].startTime.toString()
+            deliveryTo = dyinSlotList[timeselectedP].endTime.toString()
+            cartAllowTime = dyinSlotList[timeselectedP].checkOutReplaceEndTime.toString()
+            deliveryCharge = dyinSlotList[timeselectedP].deliveryFee.toString()
 
         }
 

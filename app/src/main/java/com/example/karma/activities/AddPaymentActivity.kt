@@ -9,6 +9,7 @@ import com.example.karma.R
 import com.example.karma.base.BaseActivity
 import com.example.karma.utils.PreferenceManager
 import kotlinx.android.synthetic.main.activity_add_payment.*
+import kotlinx.android.synthetic.main.activity_login.*
 
 class AddPaymentActivity : BaseActivity() {
     companion object {
@@ -18,6 +19,10 @@ class AddPaymentActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_payment)
+        btnAddBank.setBackgroundColor(Color.parseColor(PreferenceManager.getBackgroundColor(this)))
+        btnAddBank.setTextColor(Color.parseColor(PreferenceManager.getButtonFontColor(this)))
+        mbAddCard.setBackgroundColor(Color.parseColor(PreferenceManager.getBackgroundColor(this)))
+        mbAddCard.setTextColor(Color.parseColor(PreferenceManager.getButtonFontColor(this)))
         btn_back_payment.setOnClickListener {
             onBackPressed()
         }

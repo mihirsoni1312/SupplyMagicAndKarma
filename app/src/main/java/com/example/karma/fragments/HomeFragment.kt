@@ -3,6 +3,7 @@ package com.example.karma.fragments
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -61,6 +62,14 @@ class HomeFragment : Fragment(), HomeCategoryClickListner, SliderClickListner {
     ): View? {
 
         val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+
+
+        view.indicator.fillColor =
+            Color.parseColor(
+                PreferenceManager.getBackgroundColor(
+                    activity!!
+                )
+            )
 
         mPager = view.findViewById(R.id.pager)
         indicator = view.findViewById(R.id.indicator)

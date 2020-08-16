@@ -34,6 +34,7 @@ import com.google.gson.JsonParser
 import com.viewpagerindicator.CirclePageIndicator
 import kotlinx.android.synthetic.main.activity_product_detail.*
 import kotlinx.android.synthetic.main.content_product_detail.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.layout_bottom_sheet_cp.*
 import org.json.JSONObject
 import retrofit2.Call
@@ -68,7 +69,7 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_detail)
-
+        indicator = findViewById(R.id.indicator)
         val upArrow = resources.getDrawable(R.drawable.ic_backwithbackground, null)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             upArrow.colorFilter =
@@ -79,6 +80,13 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
                 PorterDuff.Mode.SRC_ATOP
             )
         }
+
+        indicator?.fillColor =
+            Color.parseColor(
+                PreferenceManager.getBackgroundColor(
+                    activity!!
+                )
+            )
 
         coordinatorLayout = findViewById(R.id.coordinateLayoutID)
 
@@ -102,7 +110,7 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
             pId = intent.getStringExtra("pId")
         }
         mPager = findViewById(R.id.pager)
-        indicator = findViewById(R.id.indicator)
+
         imageModelArrayList = ArrayList()
 
         progressDialog = CustomProgressbar().show(this@ProductDetailActivity)
@@ -363,7 +371,9 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
 
     private fun addToCart() {
         progressDialog = CustomProgressbar().show(this@ProductDetailActivity)
-        mAdapter?.setQuenty(txt_dispayDigit.text.toString(), positionforCpList)
+        if(!cpList.isNullOrEmpty()) {
+            mAdapter?.setQuenty(txt_dispayDigit.text.toString(), positionforCpList)
+        }
         /*"appId": "", (Required)
         "vendorId": "", (Required)
         "userId": "", (Required)

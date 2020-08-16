@@ -258,7 +258,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/medium"
                     android:padding="@dimen/_8sdp"
-                    android:text="Delivery"
+                    android:text="Delivery (+)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 
@@ -337,7 +337,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/medium"
                     android:padding="@dimen/_8sdp"
-                    android:text="Promo Discount"
+                    android:text="Promo Discount (-)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 
@@ -377,7 +377,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/medium"
                     android:padding="@dimen/_8sdp"
-                    android:text="Tip"
+                    android:text="Tip (+)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 
@@ -416,7 +416,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/medium"
                     android:padding="@dimen/_8sdp"
-                    android:text="Tax"
+                    android:text="Tax (+)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 

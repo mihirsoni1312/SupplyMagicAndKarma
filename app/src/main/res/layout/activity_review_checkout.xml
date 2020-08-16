@@ -458,7 +458,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/bold"
                     android:padding="@dimen/_8sdp"
-                    android:text="Cart Total"
+                    android:text="Cart Total (+)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10sdp" />
 
@@ -497,7 +497,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/bold"
                     android:padding="@dimen/_5sdp"
-                    android:text="Tax"
+                    android:text="Tax (+)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="bold" />
@@ -529,7 +529,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/bold"
                     android:padding="@dimen/_5sdp"
-                    android:text="Delivery Fee"
+                    android:text="Delivery Fee (+)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="bold" />
@@ -561,7 +561,7 @@
                     android:background="@android:color/white"
                     android:fontFamily="@font/bold"
                     android:padding="@dimen/_5sdp"
-                    android:text="Promo Discount"
+                    android:text="Promo Discount (-)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="bold" />
@@ -601,7 +601,7 @@
                     android:layout_margin="@dimen/_3sdp"
                     android:background="@android:color/white"
                     android:fontFamily="@font/bold"
-                    android:text="Tip"
+                    android:text="Tip(+)"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 

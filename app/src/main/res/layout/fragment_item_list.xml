@@ -71,7 +71,7 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_weight="9"
                     android:fontFamily="@font/regular"
-                    android:text="Search Products"
+                    android:text=" 0 Products"
                     android:textSize="@dimen/_10ssp" />
 
                 <ImageView
