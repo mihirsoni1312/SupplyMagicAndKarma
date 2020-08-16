@@ -61,7 +61,9 @@ internal class CPListAdapter(
                 mItems[position].isFavPro,
                 mItems[position].qty,
                 mItems[position].pI.o,
-                mItems[position].iAv
+                mItems[position].iAv,
+                mItems[position].desc
+
 
             )
         }
@@ -76,7 +78,8 @@ internal class CPListAdapter(
             isFavPro: Boolean,
             qty: String,
             opp: String,
-            iAv: Boolean
+            iAv: Boolean,
+            desc: String
         )
     }
 }

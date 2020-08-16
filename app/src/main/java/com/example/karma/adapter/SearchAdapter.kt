@@ -64,8 +64,7 @@ class SearchAdapter(
             .into(holder.img_product_search)
 
         if (items[position].aI.size == 1) {
-            Picasso.get()
-                .load("http://207.244.244.64/AttributesImages/" + items[position].aI[0].image)
+            Picasso.get().load("http://207.244.244.64/AttributesImages/" + items[position].aI[0].image)
                 .into(holder.vagnonvagIcon)
             holder.imgvagnonvagIcon.visibility = View.GONE
         } else if (items[position].aI.size == 2) {

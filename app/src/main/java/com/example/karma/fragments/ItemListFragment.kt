@@ -306,7 +306,8 @@ class ItemListFragment : Fragment(), AddToCartWishListListner, RemoveWishListCli
         isFavPro: Boolean,
         qty: String,
         op: String,
-        iAv: Boolean
+        iAv: Boolean,
+        desc: String
     ) {
         (activity as MainActivity).behavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
     }

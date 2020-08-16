@@ -92,7 +92,7 @@ class HomeFragment : Fragment(), HomeCategoryClickListner, SliderClickListner {
                 response: Response<HomeScreenResponse>
             ) {
                 progressDialog!!.dismiss()
-                if (response.body()!!.responseCode == 200) {
+                    if (response.body()!!.responseCode == 200) {
 
                     catList = (response.body()!!.result.categories)
                     imageModelArrayList = response.body()!!.result.sliderInfo

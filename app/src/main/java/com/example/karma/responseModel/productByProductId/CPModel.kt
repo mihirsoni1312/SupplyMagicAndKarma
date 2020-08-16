@@ -9,7 +9,6 @@ data class CPModel(
 
     @SerializedName("name")
     var name: String,
-
     @SerializedName("pI")
     var pI: CPPIModel,
     @SerializedName("iA")
@@ -19,6 +18,8 @@ data class CPModel(
     @SerializedName("isFavPro")
     var isFavPro: Boolean,
     @SerializedName("qty")
-    var qty: String
+    var qty: String,
+    @SerializedName("desc")
+    var desc: String
 
 )

@@ -202,7 +202,8 @@ class ProductListActivity : BaseActivity(), ProductListAdapter.RelatedProduct,
         isFavPro: Boolean,
         qty: String,
         op: String,
-        iAv: Boolean
+        iAv: Boolean,
+        desc: String
     ) {
         behavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
     }

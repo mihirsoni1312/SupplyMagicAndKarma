@@ -513,12 +513,24 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
         isFavPro: Boolean,
         qty: String,
         opp: String,
-        iAv: Boolean
+        iAv: Boolean,
+        desc: String
     ) {
         quantity_product_txt.text = name
         Id = _id
         positionforCpList = pos
         txt_price.text = "$currence$newPrice"
+        webview.settings.javaScriptEnabled = true
+        val websetting: WebSettings = webview.settings
+
+        websetting.defaultTextEncodingName = "utf-8"
+        webview.loadDataWithBaseURL(
+            null,
+            desc,
+            "text/html",
+            "UTF-8",
+            null
+        )
         productId = _id
         behavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
         isFav = isFavPro

@@ -209,6 +209,8 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
         super.onResume()
         backCounter = 0
         setImage()
+
+
     }
 
     override fun navigationItemClick(position: Int) {
@@ -273,6 +275,7 @@ class MainActivity : BaseActivity(), NavigationMenuItemClickListner,
                 if (f !is HomeFragment) {
                     notThatfreg = false
                     fragment = HomeFragment()
+                    vendorList()
                 } else {
                     notThatfreg = true
                 }
