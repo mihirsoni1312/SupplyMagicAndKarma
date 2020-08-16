@@ -293,10 +293,13 @@ class ProductDetailActivity : BaseActivity(), CPListAdapter.ItemListenerCP {
                         txt_price.text = "${cpList[0].pI.c}" + cpList[0].let { cpList[0].pI.n }
                         isFav = cpList[0].isFavPro
                         currence = response.body()?.result?.pI?.c!!
+                    }else{
+                        txt_price.text = "${response.body()!!.result.pI.c}${response.body()!!.result.pI.n}"
+                        txt_oldprice.text =
+                            "${response.body()!!.result.pI.c}" + "${response.body()!!.result.pI.o}"
                     }
 
-                    txt_oldprice.text =
-                        "${response.body()!!.result.pI.c}" + "${response.body()!!.result.pI.o}"
+
                     txt_oldprice.paintFlags = txt_oldprice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
 
                     iav = response.body()!!.result.iAv
